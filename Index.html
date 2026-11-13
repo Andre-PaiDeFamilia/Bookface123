@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#b91c1c">
+    <title>Bookface - Conecte-se ao mundo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="authScreen" class="auth-screen">
+        <div class="auth-card">
+            <h1 class="auth-logo">Bookface<span>.</span></h1>
+            <p class="auth-subtitle">Sua comunidade começa aqui.</p>
+
+            <div class="auth-tabs">
+                <button id="loginTab" class="auth-tab active">Entrar</button>
+                <button id="registerTab" class="auth-tab">Cadastrar</button>
+            </div>
+
+            <form id="authForm">
+                <div id="nameField" class="form-field hidden">
+                    <label for="authName">Nome</label>
+                    <input id="authName" type="text" placeholder="Seu nome" maxlength="30">
+                </div>
+
+                <div class="form-field">
+                    <label for="authEmail">E-mail</label>
+                    <input id="authEmail" type="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="authPassword">Senha</label>
+                    <input id="authPassword" type="password" placeholder="Sua senha" minlength="4" required>
+                </div>
+
+                <p id="authError" class="error-message"></p>
+                <button type="submit" id="authSubmit" class="primary-button full-button">Entrar</button>
+            </form>
+
+            <p class="auth-note">Bookface © 2026</p>
+        </div>
+    </div>
+
+    <div id="app" class="app hidden">
+
+        <header class="topbar">
+            <a href="#" class="brand" data-page="home">Bookface<span>.</span></a>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="search" id="searchInput" placeholder="Pesquisar pessoas e publicações...">
+            </div>
+
+            <div class="top-actions">
+                <button class="top-icon" data-page="notifications" title="Notificações">♧</button>
+                <button class="top-icon" data-page="messages" title="Mensagens">✉</button>
+                <button class="user-mini" data-page="profile" id="headerAvatar">U</button>
+            </div>
+        </header>
+
+        <div class="layout">
+
+            <aside class="sidebar">
+                <div class="sidebar-profile" data-page="profile">
+                    <div class="avatar large" id="sidebarAvatar">U</div>
+                    <div>
+                        <strong id="sidebarName">Usuário</strong>
+                        <small>Ver meu perfil</small>
+                    </div>
+                </div>
+
+                <nav class="side-navigation">
+                    <button class="nav-item active" data-page="home"><span>⌂</span> Início</button>
+                    <button class="nav-item" data-page="explore"><span>⌕</span> Explorar</button>
+                    <button class="nav-item" data-page="friends"><span>♧</span> Pessoas</button>
+                    <button class="nav-item" data-page="notifications"><span>♡</span> Notificações <span id="notificationBadge" class="notification-badge hidden">0</span></button>
+                    <button class="nav-item" data-page="messages"><span>✉</span> Mensagens</button>
+                    <button class="nav-item" data-page="profile"><span>◉</span> Meu perfil</button>
+                    <button class="nav-item" data-page="settings"><span>⚙</span> Configurações</button>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <p>Bookface © 2026</p>
+                    <small>Conecte-se. Compartilhe. Descubra.</small>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <div id="pageContent"></div>
+            </main>
+
+            <aside class="right-sidebar">
+                <div class="widget">
+                    <h3>Quem seguir</h3>
+                    <div id="suggestedUsers"></div>
+                    <button class="text-button" data-page="friends">Ver mais pessoas</button>
+                </div>
+
+                <div class="widget">
+                    <h3>Sobre o Bookface</h3>
+                    <p>Um espaço para compartilhar ideias, conhecer pessoas e criar conexões.</p>
+                </div>
+            </aside>
+
+        </div>
+
+        <nav class="mobile-nav">
+            <button data-page="home" class="active"><span>⌂</span><small>Início</small></button>
+            <button data-page="explore"><span>⌕</span><small>Explorar</small></button>
+            <button data-page="friends"><span>♧</span><small>Pessoas</small></button>
+            <button data-page="notifications"><span>♡</span><small>Avisos</small></button>
+            <button data-page="profile"><span>◉</span><small>Perfil</small></button>
+        </nav>
+
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModal">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="main.js"></script>
+</body>
+  </html>
+  
